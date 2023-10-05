@@ -1,0 +1,7 @@
+Week1
+2. 終端機印出 "Hello Word"
+>>helloworld.py
+3. 跟我說什麼是 String, f-string, r-string以及用法並給出例子。
+>>string.py
+4. 寫一個函式，印出所有Python的基本資料類別，至於有那些給你去查，記得要列出來並附上說明。
+>>type.py

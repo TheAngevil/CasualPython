@@ -1,0 +1,31 @@
+git init (初始化git)
+
+git clone  https://github.com/imhaley/homework.git (複製遠端repo到本地)
+
+git branch -m main (重新命名當下的branch為main)
+
+git add . (將所有檔案新增到git，這裡有先把week1的作業放進來)
+
+git commit -m “first commit” (提交並寫出本次commit的描述文字，-m:不使用文字編輯器)
+
+git remote add origin https://github.com/imhaley/homework.git (把網址加到我的remote，並且名稱設為origin>如果是用Pycharm連結的話已經設好了不用再特地加)
+
+git push origin main (把main推到remote上，Github上可以看到week1的作業)
+
+
+git branch dev (新增dev分支)
+
+git checkout dev (切換到dev分支)
+
+git add txt (將檔案新增到git)
+
+git commit -m “add txt” (提交並寫出本次commit的描述文字，-m:不使用文字編輯器)
+
+git push origin dev (將dev推到remote上，因為還沒merge進main所以Github的main分支上看不到)
+
+如果要在main上看到的話>>
+git checkout main (切換到main分支)
+
+git merge dev (把dev merge到main)
+
+git push origin main (把main推到remote上)
