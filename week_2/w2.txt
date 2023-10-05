@@ -1,0 +1,35 @@
+echo "# Practice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:YiYunH/Chloe.git
+git push -u origin main
+
+git init #初始化 Git Repository
+git add .
+git commit -m "first version"
+git branch #這時有main了(*main)
+git remote -v #查詢遠端的repository
+		#(origin git@github.com:YiYunH/Chloe.git (fetch)
+		#origin	git@github.com:YiYunH/Chloe.git (push))
+git push -u origin main #將寫好的檔案放到main
+git checkout -b dev #開dev分支
+git push origin dev
+nano w2.txt #新增.txt
+git add w2.txt
+git commit -m "Added steps to w2.txt"
+git push origin dev
+
+git checkout main
+git merge dev #將dev的w2.txt同步到main
+git commit -m "Merge dev into main"
+git push origin main
+
+
+<note>
+git remote set-url #更改要remote的url
+
+git add <文件名.txt> #更改txt內容
+git commit -m "修改说明"
+git push origin dev
