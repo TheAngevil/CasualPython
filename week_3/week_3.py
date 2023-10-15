@@ -39,7 +39,7 @@ print(id(a)==id(10)) #True
 
 # 1.3 直接印出id(c)，會發生什麼事情? 為什麼?
 print(f'{"~" * 50}1.3{"~" * 50}')
-#print(id(c)) 
+# print(id(c)) 
 
 # Ans + Note
 # 直接印出id(c)會顯示name 'c' is not defined, 因為在前面的題目中皆沒有給變數c一個值
@@ -52,9 +52,10 @@ print(f'{"~" * 50}1.4{"~" * 50}')
 c = b
 print(des("b", id(b)))
 print(des("c", id(c)))
+print(des("99", id(99)))
 
 # Ans + Note
-# 結果無差異因為不管c=99或c=b，c跟b的值都是99
+# 在1.3中印出id(c)會出現錯誤訊息，在1.4中我們使c=b，由前幾題可知b=99，因此c=b=99所以id(c) id(b) id(99)的結果在這題中是無差異的
 
 
 # 1.5 嘗試印出(a==b) 以及(a is b) 結果是?
@@ -187,14 +188,14 @@ print(id(list_1) != id(list_2))
 # 1.11 請列出基本型別中，哪一些是mutable 以及 哪一些是 immutable
 print(f'{"~" * 50}1.11{"~" * 50}')
 # Ans
-mutable = "mutable(可變)：整數（int）/ 浮點數（float）/ 字串（str）/ 元組（tuple"
-immutable = "mmutable(不可變)：列表（list）/ 字典（dict） / 集合（set）"
+mutable = "mutable(可變)：列表（list）/ 字典（dict） / 集合（set）"
+immutable = "immutable(不可變)：整數（int）/ 浮點數（float）/ 字串（str）/ 元組（tuple)"
 print(mutable)
 print(immutable)
 
 
 # 1.12 請說明id()的用法以及出來的數字的意義，並自行查閱並根據上敘練習，說明值(value)，址(address)，引用(Reference)的概念。如有針對上敘問題的額外心得，請直接加入前面題目的說明中
-print(f'{"~" * 50}1.2{"~" * 50}')
+print(f'{"~" * 50}1.12{"~" * 50}')
 value = "值(value)：指數值、文字、物件等｜x=10，10是值"
 address = "址(address)：指記憶體中儲存變數或物件的位置，每個變數或物件在記憶體中都有一個唯一的址，可以用來準確定位記憶體中的位置"
 Reference = "引用(Reference)：是變數指向該資料位址的關係｜ex. 1.2 & 1.4"
