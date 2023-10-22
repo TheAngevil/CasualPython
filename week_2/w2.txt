@@ -30,6 +30,6 @@ git push origin main
 <note>
 git remote set-url #更改要remote的url
 
-git add <文件名.txt> #更改txt內容
+git add <文件名.txt> #加入新檔案
 git commit -m "修改说明"
 git push origin dev
