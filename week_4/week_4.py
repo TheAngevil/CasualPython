@@ -27,7 +27,7 @@ print_by_position("Hello","World")
 print_by_position("World","Hello") #print_by_position顧名思義就是會依照輸入的字串的順序依序印出p1, p2
 
 # 1.5 觀察print_by_position(p2="world", p1="Hello")的輸出結果並解釋與1.4印出結果不同的原因
-print_by_position("Hello","World") #p1="Hello", p2="world", 結果不同是因為依序輸入的字串會代表(p1,p2)是有順序性的
+print_by_position(p2="world", p1="Hello") #p1="Hello", p2="world", 結果不同是因為依序輸入的字串會代表(p1,p2)是有順序性的
 
 
 # 2.  學會while迴圈的使用
@@ -86,13 +86,19 @@ for num in range(1, 11):
     print(num)
 
 # 5.2 使用while和break印出小於10的正整數(1~9)
-num = 1 
-while num < 10:
+#num = 1 
+#while num < 10:
+    # print(num)
+    # num += 1 #一直到這邊跟前面練習的一樣，只是在while那邊沒有<=取而代之的是將設條件的方式用break
+    # if num == 10:
+    #     break #當上方if的條件成立時即結束回圈
+# while num < 10: 跟 if num == 10: break 檢查重複了
+num = 1
+while True:
+    if num >= 10:
+        break
     print(num)
-    num += 1 #一直到這邊跟前面練習的一樣，只是在while那邊沒有<=取而代之的是將設條件的方式用break
-    if num == 10:
-        break #當上方if的條件成立時即結束回圈
-
+    num += 1
 
 # 6.  綜合題目
 # 請利用上面所教，寫出猜數字遊戲，且猜題次數限制為10次，提示:可利用input()函式擷取console的輸入
@@ -106,22 +112,24 @@ while num < 10:
 
     try:
         guess_ans = int(guess_ans)
+        if 1 <= guess_ans <= 100:  #檢查是否在1~100之間
+            if guess_ans < ans:
+                print("太小了")
+            elif guess_ans > ans:
+                print("太大了")
+            else:
+                print(f"答對惹！答案是 {ans}。")
+                break
+            num += 1
+        else:
+            print("請輸入1~100之間的整數")
     except ValueError:
         print("請輸入一個有效的整數")
-        continue
-
-    if guess_ans < ans:
-        print("太小了")
-    elif guess_ans > ans:
-        print("太大了")
-    else:
-        print(f"答對惹！答案是 {ans}。")
-        break
-
-    num += 1
 
 if num == 10:
     print(f"已經猜10次了，答案是 {ans}。")
+
+
 
 
 
