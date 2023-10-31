@@ -123,7 +123,6 @@ def check_type(str):
                 print("請輸入正整數")
             else:
                 return num #輸入的值是數字時回傳值
-                break
         except ValueError: #偵測到異常時執行
             print("請輸入整數數字")
 
@@ -138,21 +137,23 @@ while  end <= start: #如果結尾小於等於起始數字 則需重新輸入結
 ans=random.randint(start,end) #產生user輸入範圍內隨機的整數
 #print(ans) #自己偷看答案用
 
-while times>=10:
+while times >= 10:
     for i in range(10):
         guess = check_type(f"請猜出{start}~{end}的任意數字:")
         if guess == ans:
             print("答對了!")
             break
-        elif times ==1 :
+        elif times == 1:
             print(f"你的猜題次數皆用完! 正確答案是{ans}")
         elif (guess < start) | (guess > end):
             times -= 1
             print(f"超出猜題範圍囉! 你剩{times}次機會了")
         elif guess > ans:
             times -= 1
+            end = guess
             print(f"答錯了! 請往更小的數字猜，你剩{times}次機會囉")
         else:
             times -= 1
+            start = guess
             print(f"答錯了! 請往更大的數字猜，你剩{times}次機會囉")
     break #保險起見用
