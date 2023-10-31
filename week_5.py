@@ -16,6 +16,11 @@ class Adventurer:
 player_1 = Adventurer() # 宣告一個類別為Adventurer的物件player_1
 player_1.introduce() # 使用物件的公開函數
 print("Ans: 會印出'Hello, I am an adventurer!'")
+# -補充
+# __init__通常用來初始化物件的屬性，假如不使用default值時會要求在建立物件時就為該參數提供值，不然會出現錯誤，因為Python預期你必須在初始化時提供相應的參數值以確保物件的完整性和一致性，
+# 通常用於強制使用者在建立物件時提供必要的資訊，以確保物件的完整性
+# 如果有使用default值時，就可以選擇性的省略這些參數，假如沒有輸入或設定回傳值的話就會使用預設值
+# 通常用於提供簡易的預設選項，同時也可以使物件的建立更具選擇性和可配置性
 
 print("\n**屬性與初始化**")
 # **屬性與初始化**
@@ -130,10 +135,10 @@ class Adventurer:
         self.__level = level
 
     def get_name(self): # 新增`get_name`方法
-        print(f"名稱:{self.__name}")
+        return self.__name
 
     def get_level(self): # 新增`get_level`方法
-        print(f"Lv.{self.__level}")
+        return self.__level
 
     def set_name(self): # 新增`set_name`方法
         self.__name = input("請輸入名稱:")
@@ -152,16 +157,14 @@ class Adventurer:
 
 # 新增`get_name`和`get_level`方法來取得這些屬性的值
 player_6 = Adventurer("初學者", 1)
-player_6.get_name()
-player_6.get_level()
+print(f"名稱:{player_6.get_name()}, 等級:Lv.{player_6.get_level()}")
 
 # 嘗試使用上面的get_XXX與 set_XXX方法，讓一個等級1的"初學者"變成等級999的"騎士領主"!
 # 設定名稱及等級
 player_6.set_name()
 player_6.set_level()
 # 取得執行結果
-player_6.get_name()
-player_6.get_level()
+print(f"名稱:{player_6.get_name()}, 等級:Lv.{player_6.get_level()}")
 
 # - 嘗試直接 實例.__name 與 實例.__level，還可以拿到資料嗎? 還可以修改嗎?
 print("Ans: 不行，來源端無法存取到類別中的私有屬性(Private Attribute)，故不能拿取及修改")
@@ -220,9 +223,6 @@ class Monster:
 
     def set_strength(self):
         self.__strength = input("請輸入能力:")
-
-    def set_attack(self):
-        print(input("請輸入怪物攻擊技能:"))
 
     def set_sound(self):
         return input("請輸入叫聲:")
