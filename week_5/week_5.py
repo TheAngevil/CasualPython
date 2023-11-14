@@ -62,7 +62,7 @@ print(f"比較player_1跟player_2的id: {id(player_1) == id(player_2)}")
 print("\n**繼承**")
 class Mage(Adventurer): # (7)繼承Adventurer裡的introduce, __init__, show_info
 
-    def introduce(self):
+    def introduce_mage(self):
         super().introduce()  # super()是一个内置函数，用于在子類中調用父類的方法
         print(f"I am a {self.job} my named is {self.name} at level {self.level}.")
 
@@ -72,7 +72,8 @@ class Mage(Adventurer): # (7)繼承Adventurer裡的introduce, __init__, show_inf
 player_3 = Mage(name="Harry", level=5, job="Mage")
 
 player_3.skill_1() 
-player_3.introduce() # (9)新增Mage > player3
+player_3.introduce_mage() # (9)新增Mage > player3
+player_3.introduce() # 讓其他使用者自我介紹
 
 
 
@@ -86,7 +87,6 @@ player_3.introduce() # (9)新增Mage > player3
 print("\n**多態性**")
 class Warrior(Adventurer): # (10)
     def introduce(self):
-        super().introduce()
         print(f"I am a {self.job} my named is {self.name} at level {self.level}.")
     
     def Warrior_skill(self):
@@ -187,10 +187,10 @@ player_1.set_level(-5)
 # - 討論實例變數與類別變數的區別，並提供實例來說明。
 print("\n**類別與實例變數**")
 class Adventurer:
-    faction = "Neutral" # 類別變數(Adventurer獨有的)
+    faction = "Neutral" # 類別變數Class Variable(Adventurer獨有的)
 
     def __init__(self, name):
-        self.name = name # 實例變數(每个Adventurer都有自己的name，当修改類別變數faction的值時，會影響所有包含新創建的實例變數)
+        self.name = name # 實例變數Instance Variable
 
 adventurer1 = Adventurer("A")
 adventurer2 = Adventurer("B") # 新增兩個Adventurer
@@ -206,6 +206,9 @@ print(f"Adventurer 2: Name - {adventurer2.name}, Faction - {adventurer2.faction}
 adventurer3 = Adventurer("C") # 新增一個Adventurer
 
 print(f"Adventurer 3: Name - {adventurer3.name}, Faction - {adventurer3.faction}") # 新增的實例也會受影響
+
+# name不會受影響因為name是每个Adventurer自己擁有的
+# 每个Adventurer都有自己的name，當修改類別變數faction的值時，會影響所有包含新創建的實例變數
 
 
 
