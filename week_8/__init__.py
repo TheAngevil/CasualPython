@@ -1,0 +1,1 @@
+# __init__.py的目的是將一個目錄轉換為Python Package。當Python解釋器遇到包含這個文件的目錄時，它會將這個目錄視為Python Package

@@ -16,6 +16,3 @@ class base_page:
         for i in find_element:
             element_list.append(i.text) #讀取所有的元素並將元素轉換為的文字全部存於上方生成的list(element_list)內
         return  element_list #回傳找到的所有文字元素值
-
-
-
